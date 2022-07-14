@@ -1,2 +1,2 @@
-# Frontend_Mentor
-My project solutions for frontend mentors projects.
+# Frontend_Mentor_Projects
+My frontend mentor projects.

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <script defer src="./js/main.js"></script>
+    <title>Frontend Mentor | Interactive rating component</title>
+  </head>
+  <body>
+    <div id="container">
+      <!-- Rating state start -->
+      <div id="rating-state">
+        <div id="image-holder">
+          <img src="./images/icon-star.svg" alt="star icon" />
+        </div>
+        <h1>How did we do?</h1>
+        <p>
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <ul>
+          <li class="default-state">1</li>
+          <li class="default-state">2</li>
+          <li class="default-state">3</li>
+          <li class="default-state">4</li>
+          <li class="default-state">5</li>
+        </ul>
+        <button>SUBMIT</button>
+      </div>
+      <!-- Rating state end -->
+
+      <div id="thank-you-state">
+        <!-- Thank you state start -->
+        <div id="image-holder">
+          <img
+            src="./images/illustration-thank-you.svg"
+            alt="illustration image"
+          />
+        </div>
+
+        <!-- Add rating here -->
+        <p>You selected <span id="user-rating"> 0 </span> out of 5</p>
+        <h2>Thank you!</h2>
+        <p>
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don’t hesitate to get in touch!
+        </p>
+        <!-- Thank you state end -->
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Ebede Victor</a>.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+// Importing Fonts
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,700;1,400&display=swap");
+
+// Color Variables
+$orange: hsl(25, 97%, 53%);
+$white: hsl(0, 0%, 100%);
+$light-grey: hsl(217, 12%, 63%);
+$medium-grey: hsl(216, 12%, 54%);
+$dark-blue: hsl(213, 19%, 18%);
+$very-dark-blue: hsl(216, 12%, 8%);
+
+// Font variable
+$main-font: Overpass;
+$blur-value:0.3px;
+
+// Mixins
+@mixin center-items($display) {
+  display: $display;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin mq($arg) {
+  @media (max-width: $arg) {
+    @content;
+  }
+}
+
+// Global Resets
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} // End of global resets
+
+body {
+  font-family: $main-font;
+  @include center-items(grid);
+  width: 100%;
+  min-height: 100vh;
+  background-color: $very-dark-blue;
+  color: $white;
+}
+
+#container {
+  background-color: $dark-blue;
+  margin-inline: 5%;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 420px;
+  animation: fade-in 2s ease;
+}
+
+#rating-state {
+  display: block;
+
+  #image-holder {
+    background-color: lighten($dark-blue, 5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    @include center-items(flex);
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    filter: blur($blur-value);
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 14px;
+    filter: blur($blur-value);
+    line-height: 20px;
+    color: $light-grey;
+    margin-bottom: 30px;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  .default-state {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: lighten($dark-blue, 5);
+    @include center-items(flex);
+    padding-top: 4px;
+    color: $light-grey;
+    filter: blur($blur-value);
+    transition: all 0.6s ease;
+    &:hover {
+      cursor: pointer;
+      color: $white;
+      background-color: $orange;
+    }
+  }
+  #active {
+    background-color: $medium-grey;
+    color: $white;
+  }
+
+  button {
+    color: $white;
+    background-color: $orange;
+    font-family: $main-font;
+    font-size: 15px;
+    letter-spacing: 3px;
+    filter: blur($blur-value);
+    border: none;
+    width: 100%;
+    height: 46px;
+    padding-top: 5px;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+    &:hover {
+      cursor: pointer;
+      color: $orange;
+      background-color: $white;
+    }
+  }
+}
+
+#thank-you-state {
+  @include center-items(flex);
+  flex-direction: column;
+  display: none;
+  animation: fade-in 1s ease;
+
+  #image-holder {
+    width: 140px;
+    height: 100px;
+    margin-bottom: 20px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  p:first-of-type {
+    color: $orange;
+    border-radius: 20px;
+    @include center-items(flex);
+    padding: 8px;
+    width: 200px;
+    background-color: darken($light-grey, 40);
+    margin-bottom: 30px;
+    filter: blur($blur-value);
+
+    span {
+      display: inline-block;
+      margin-inline: 4px;
+    }
+  }
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  p:last-of-type {
+    color: $light-grey;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+    filter: blur($blur-value);
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  max-width: 320px;
+  left: calc(50% - 160px);
+  font-size: 13px;
+  text-align: center;
+  @include mq(300px) {
+    left: calc(50% - 120px);
+    text-align: left;
+  }
+}
+.attribution a {
+  color: $orange;
+  transition: color 0.4s ease;
+  &:hover {
+    color: $white;
+  }
+}
+
+// Animation
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
