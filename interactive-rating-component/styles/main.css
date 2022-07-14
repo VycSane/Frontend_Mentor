@@ -24,6 +24,12 @@ body {
   max-width: 420px;
   animation: fade-in 2s ease;
 }
+@media (max-width: 300px) {
+  #container {
+    padding: 40px 15px;
+    text-align: center;
+  }
+}
 
 #rating-state {
   display: block;
@@ -145,15 +151,14 @@ body {
 .attribution {
   position: absolute;
   bottom: 10px;
-  max-width: 320px;
+  text-align: center;
   left: calc(50% - 160px);
   font-size: 13px;
-  text-align: center;
 }
 @media (max-width: 300px) {
   .attribution {
-    left: calc(50% - 120px);
-    text-align: left;
+    left: calc(50% - 140px);
+    text-align: center;
   }
 }
 

@@ -11,7 +11,7 @@ $very-dark-blue: hsl(216, 12%, 8%);
 
 // Font variable
 $main-font: Overpass;
-$blur-value:0.3px;
+$blur-value: 0.3px;
 
 // Mixins
 @mixin center-items($display) {
@@ -50,6 +50,10 @@ body {
   padding: 30px;
   max-width: 420px;
   animation: fade-in 2s ease;
+  @include mq(300px) {
+    padding: 40px 15px;
+    text-align: center;
+  }
 }
 
 #rating-state {
@@ -174,13 +178,12 @@ body {
 .attribution {
   position: absolute;
   bottom: 10px;
-  max-width: 320px;
+  text-align: center;
   left: calc(50% - 160px);
   font-size: 13px;
-  text-align: center;
   @include mq(300px) {
-    left: calc(50% - 120px);
-    text-align: left;
+    left: calc(50% - 140px);
+    text-align: center;
   }
 }
 .attribution a {
